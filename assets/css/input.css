@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Design tokens — semantic colors as raw RGB channels so Tailwind's
+   `rgb(var(--x) / <alpha-value>)` mapping (see tailwind.config.js) can apply
+   opacity. Light theme is :root; .dark overrides.
+--------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 24 24 27; /* zinc-900 */
+    --muted: 244 244 245; /* zinc-100 */
+    --muted-foreground: 82 82 91; /* zinc-600 */
+    --border: 228 228 231; /* zinc-200 */
+    --accent: 5 150 105; /* emerald-600 */
+    --accent-foreground: 255 255 255;
+  }
+
+  .dark {
+    --background: 9 9 11; /* zinc-950 */
+    --foreground: 244 244 245; /* zinc-100 */
+    --muted: 39 39 42; /* zinc-800 */
+    --muted-foreground: 161 161 170; /* zinc-400 */
+    --border: 39 39 42; /* zinc-800 */
+    --accent: 52 211 153; /* emerald-400 */
+    --accent-foreground: 9 9 11;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Consistent, visible focus ring for keyboard users across the site. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    @apply bg-accent/20;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reusable component classes. Kept small; most styling stays inline in markup.
+--------------------------------------------------------------------------- */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .container-prose {
+    @apply mx-auto w-full max-w-prose px-5 sm:px-6;
+  }
+
+  /* Skip-to-content link — visible only when focused. */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50
+           focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-foreground;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium
+           transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-accent
+           focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-accent-foreground hover:opacity-90;
+  }
+  .btn-secondary {
+    @apply btn border border-border bg-background text-foreground hover:bg-muted;
+  }
+
+  /* Links inside prose/body copy */
+  .link {
+    @apply text-accent underline-offset-4 hover:underline;
+  }
+
+  /* Tags / chips */
+  .tag {
+    @apply inline-flex items-center rounded-md border border-border bg-muted px-2 py-0.5
+           text-xs font-medium text-muted-foreground;
+  }
+
+  /* Status badges */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-xs font-medium;
+  }
+  .badge-live {
+    @apply badge bg-accent/15 text-accent;
+  }
+  .badge-progress {
+    @apply badge border border-border text-muted-foreground;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-lg border border-border bg-background transition-colors duration-150
+           hover:border-muted-foreground/40;
+  }
+
+  /* Content callouts (used in rendered Markdown) */
+  .callout {
+    @apply my-6 rounded-lg border-l-4 border-border bg-muted/50 p-4 text-sm;
+  }
+  .callout-info {
+    @apply callout border-accent;
+  }
+  .callout-warning {
+    @apply callout border-amber-500;
+  }
+  .callout-decision {
+    @apply callout border-accent bg-accent/5;
+  }
+}

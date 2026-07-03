@@ -1,0 +1,15 @@
+node_modules/
+
+# Generated artifacts (CI rebuilds these before deploy)
+assets/css/styles.css
+sitemap.xml
+robots.txt
+rss.xml
+
+# Local machine-specific Claude Code settings
+.claude/settings.local.json
+
+.DS_Store
+*.log
+.vercel
+.netlify
