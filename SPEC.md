@@ -45,10 +45,10 @@ Deliberately small. If a requirement seems to need more than this list, prefer d
 | Behavior | **Vanilla JavaScript (ES2020+)** in plain `<script>` files, no modules bundler | Simple, debuggable, no build |
 | DOM helper | **jQuery 3.7 (slim build)** | Requested; used for DOM wiring, partial injection, render of content, tag filtering. Note: slim omits `$.ajax`, so the network fetch itself uses native `fetch()`; jQuery handles the DOM. |
 | Styling | **Tailwind CSS v3.4 via the Tailwind CLI** | One compiled `styles.css`; the *only* build step |
-| Content rendering | **`marked`** (Markdown → HTML) + **`highlight.js`** (code) loaded from CDN | Lets project/blog bodies be authored in Markdown and rendered client-side without a build |
+| Content rendering | **`marked`** (Markdown → HTML) + **`highlight.js`** (code), **vendored locally** in `assets/js/vendor/` | Lets project/blog bodies be authored in Markdown and rendered client-side without a build. Vendored (not CDN) for the same reasons as jQuery: no external runtime dep, no SRI fragility, works offline. Loaded only on detail/post pages, so the homepage budget is unaffected. |
 | Fonts | **Google Fonts or self-hosted** (Inter + JetBrains Mono) via `<link>`/`@font-face` | 2 families max |
 | Icons | **Inline SVG** (hand-picked from Lucide/Heroicons, pasted into markup or a small sprite) | Zero dependency |
-| Local dev server | **`npx serve`** or VS Code Live Server (any static server) | Needed because pages use `fetch()` for partials/content, which fails on `file://` |
+| Local dev server | **`npx serve`** or VS Code Live Server (any static server) | Needed because pages use `fetch()` for partials/content, which fails on `file://`. A `serve.json` sets `cleanUrls: false` so `detail.html?slug=…` query params survive locally (serve's default clean-URL rewrite otherwise strips them). |
 | Deployment | **GitHub Pages** (primary) or Netlify/Cloudflare Pages | Free static hosting; GitHub Pages keeps everything on GitHub |
 | CI | **GitHub Actions** — build Tailwind, run HTML/link checks, run a headless smoke test | Proves the site builds and basic invariants hold |
 

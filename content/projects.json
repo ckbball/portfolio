@@ -1,0 +1,49 @@
+[
+  {
+    "slug": "gauntlet",
+    "title": "Gauntlet — Coding-Agent Evaluation Harness",
+    "pitch": "A CLI + dashboard that runs AI coding agents against sandboxed task suites and scores them across multiple axes.",
+    "description": "Open-source harness that runs AI coding agents against versioned tasks in Docker sandboxes and tracks scores across model versions.",
+    "date": "2026-06-01",
+    "dateEnd": null,
+    "status": "in-progress",
+    "featured": true,
+    "order": 1,
+    "tags": ["Go", "AI/LLM", "Docker", "Data Eng"],
+    "stack": ["Go 1.24", "Docker", "SQLite", "Next.js", "Claude API"],
+    "role": "Solo — design, build, deploy",
+    "links": {
+      "github": "https://github.com/ckbball/gauntlet"
+    },
+    "metrics": [
+      { "label": "Tasks in suite", "value": "15" },
+      { "label": "Axes scored", "value": "4" },
+      { "label": "Parallel runners", "value": "8" }
+    ],
+    "thumbnail": null,
+    "draft": false
+  },
+  {
+    "slug": "fleetline",
+    "title": "Fleetline — Device Telemetry Platform",
+    "pitch": "Real-time monitoring for a simulated fleet of 500+ devices streaming telemetry over gRPC, with a live control dashboard.",
+    "description": "Real-time device fleet telemetry over gRPC into a Go ingestion service and TimescaleDB, with a live dashboard and two-way control.",
+    "date": "2026-05-01",
+    "dateEnd": null,
+    "status": "in-progress",
+    "featured": true,
+    "order": 2,
+    "tags": ["Go", "gRPC", "Data Eng", "Frontend"],
+    "stack": ["Go 1.24", "gRPC + protobuf", "TimescaleDB", "Redis", "Fly.io"],
+    "role": "Solo — design, build, deploy",
+    "links": {
+      "github": "https://github.com/ckbball/fleetline"
+    },
+    "metrics": [
+      { "label": "Simulated devices", "value": "500+" },
+      { "label": "Ingest throughput", "value": "10k events/sec" }
+    ],
+    "thumbnail": null,
+    "draft": false
+  }
+]

@@ -12,6 +12,9 @@ export default {
     './writing/**/*.html',
     './partials/**/*.html',
     './assets/js/**/*.js',
+    // Markdown content applies component classes at render time; _TEMPLATE.md
+    // contains every component class so it doubles as a safelist against purge.
+    './content/**/*.md',
   ],
   theme: {
     extend: {
