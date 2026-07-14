@@ -1,7 +1,7 @@
 {
   "name": "caesarladion-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio & website for Caesar Ladion — static HTML + Vanilla JS + jQuery + Tailwind.",
+  "description": "Single-page portfolio for Caesar Ladion.",
   "private": true,
   "type": "module",
   "author": "Caesar Ladion <caesar.ladion@gmail.com>",
@@ -9,13 +9,11 @@
   "scripts": {
     "dev:css": "tailwindcss -i assets/css/input.css -o assets/css/styles.css --watch",
     "build:css": "tailwindcss -i assets/css/input.css -o assets/css/styles.css --minify",
-    "build:feeds": "node scripts/generate-feeds.mjs",
-    "build": "npm run build:css && npm run build:feeds",
+    "build": "npm run build:css && node scripts/check-build.mjs",
     "serve": "serve -l 3000 .",
     "dev": "npm run serve"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.15",
     "serve": "^14.2.3",
     "tailwindcss": "^3.4.17"
   }

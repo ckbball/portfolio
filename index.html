@@ -1,94 +1,158 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Caesar Ladion — AI &amp; Backend Engineer</title>
+    <title>Caesar Ladion — AI Engineer</title>
     <meta
       name="description"
-      content="Caesar Ladion — AI engineer building and evaluating agent systems, with 3+ years shipping backend and data systems in Go and Python."
+      content="Caesar Ladion builds dependable AI, backend, and data systems in Go and Python."
     />
     <link rel="canonical" href="https://caesarladion.com/" />
-
-    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Caesar Ladion — AI &amp; Backend Engineer" />
-    <meta
-      property="og:description"
-      content="AI engineer building and evaluating agent systems. Backend & data systems in Go and Python."
-    />
+    <meta property="og:title" content="Caesar Ladion — AI Engineer" />
+    <meta property="og:description" content="Dependable AI, backend, and data systems in Go and Python." />
     <meta property="og:url" content="https://caesarladion.com/" />
     <meta property="og:image" content="https://caesarladion.com/assets/images/og-default.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
-
-    <!-- Flash-guard: apply the persisted/system theme before first paint.
-         MUST be inline and blocking (no defer). Keep in every page's <head>. -->
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (stored === 'dark' || (!stored && prefersDark)) {
-            document.documentElement.classList.add('dark');
-          }
-        } catch (e) {}
-      })();
-    </script>
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Roboto+Condensed:wght@300;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Caesar Ladion",
+        "jobTitle": "AI Engineer",
+        "url": "https://caesarladion.com/",
+        "email": "mailto:caesar.ladion@gmail.com",
+        "sameAs": [
+          "https://github.com/ckbball",
+          "https://www.linkedin.com/in/caesarladion"
+        ]
+      }
+    </script>
   </head>
-  <body class="min-h-screen">
+
+  <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <div id="site-header"></div>
+    <header class="site-header">
+      <div class="page-shell header-inner">
+        <a href="#top" class="wordmark" aria-label="Caesar Ladion, home">
+          caesar<span>.</span>ladion
+        </a>
+        <nav aria-label="Primary navigation" class="primary-nav">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
     <main id="main">
-      <!-- Hero (placeholder shell — real copy lands in M6) -->
-      <section class="container-page py-20 sm:py-28">
-        <div class="max-w-3xl">
-          <p class="mb-4 font-mono text-sm text-accent">Bay Area, California</p>
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-            I build and evaluate <span class="text-accent">AI agent systems</span>.
-          </h1>
-          <p class="mt-6 text-lg leading-relaxed text-muted-foreground">
-            3+ years shipping backend and data systems in Go and Python — including
-            production LLM applications and expert-level evaluation of frontier coding
-            agents.
+      <section id="top" class="page-shell hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">I build dependable<br />AI systems.<span>_</span></h1>
+          <p>
+            AI engineer with 3+ years shipping backend and data systems in Go and
+            Python—now focused on agent systems and evaluation.
           </p>
-
-          <div class="mt-8 flex flex-wrap items-center gap-3">
-            <a href="/projects/" class="btn-primary">View Projects</a>
-            <a href="/resume.html" class="btn-secondary">Resume</a>
+          <div class="hero-actions">
+            <a href="#work" class="button button-primary">
+              See my work
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="mailto:caesar.ladion@gmail.com" class="button button-secondary">
+              Email me
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
           </div>
-
-          <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <a class="link" href="https://github.com/ckbball" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="link" href="https://www.linkedin.com/in/caesarladion" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="link" href="mailto:caesar.ladion@gmail.com">Email</a>
+          <div class="hero-links" aria-label="Social links">
+            <a href="https://github.com/ckbball" target="_blank" rel="noopener noreferrer">GitHub <span>→</span></a>
+            <a href="https://www.linkedin.com/in/caesarladion" target="_blank" rel="noopener noreferrer">LinkedIn <span>→</span></a>
           </div>
+        </div>
+        <a class="scroll-cue" href="#work" aria-label="Scroll to selected work">↓</a>
+      </section>
+
+      <section id="work" class="page-shell section" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p><span>01</span> / Work</p>
+          <h2 id="work-title">Selected work</h2>
+        </div>
+
+        <div class="project-list">
+          <article class="project-row">
+            <p class="project-number" aria-hidden="true">01</p>
+            <div class="project-copy">
+              <h3>Gauntlet</h3>
+              <p>A coding-agent evaluation harness that runs agents in Docker sandboxes and scores them across multiple axes.</p>
+            </div>
+            <div class="project-meta">
+              <dl>
+                <div><dt>Stack</dt><dd>Go · Docker · SQLite · Next.js</dd></div>
+                <div><dt>Status</dt><dd>In progress</dd></div>
+              </dl>
+              <a href="https://github.com/ckbball/gauntlet" target="_blank" rel="noopener noreferrer">View on GitHub <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="project-row">
+            <p class="project-number" aria-hidden="true">02</p>
+            <div class="project-copy">
+              <h3>Fleetline</h3>
+              <p>Real-time telemetry and control for a simulated fleet of 500+ devices over gRPC.</p>
+            </div>
+            <div class="project-meta">
+              <dl>
+                <div><dt>Stack</dt><dd>Go · gRPC · TimescaleDB · Redis</dd></div>
+                <div><dt>Status</dt><dd>In progress</dd></div>
+              </dl>
+              <a href="https://github.com/ckbball/fleetline" target="_blank" rel="noopener noreferrer">View on GitHub <span>→</span></a>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- Sections 2–5 (featured projects, experience, writing, skills) arrive in M3. -->
+      <section id="about" class="page-shell section about" aria-labelledby="about-title">
+        <div class="about-copy">
+          <h2 id="about-title">About</h2>
+          <p>I started in backend and data engineering, building production systems in Go and Python. Today I focus on AI agents: how they work, how they fail, and how to evaluate them well.</p>
+        </div>
+        <ol class="skill-list">
+          <li><span>01</span> AI agents &amp; evaluation</li>
+          <li><span>02</span> Backend systems</li>
+          <li><span>03</span> Data engineering</li>
+        </ol>
+      </section>
+
+      <section id="contact" class="page-shell contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Let’s build something dependable.</h2>
+        <div class="contact-row">
+          <p>I’m open to AI engineering and backend roles in the Bay Area or remote.</p>
+          <a href="mailto:caesar.ladion@gmail.com">
+            caesar.ladion@gmail.com
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </section>
     </main>
 
-    <div id="site-footer"></div>
-
-    <!-- Scripts: jQuery first, then config/theme, then partial loader. -->
-    <script src="/assets/js/vendor/jquery.slim.min.js"></script>
-    <script src="/assets/js/config.js"></script>
-    <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/partials.js"></script>
+    <footer class="page-shell footer">
+      <div class="footer-links">
+        <a href="https://github.com/ckbball" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/caesarladion" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <p>Caesar Ladion · Bay Area, California</p>
+    </footer>
   </body>
 </html>
