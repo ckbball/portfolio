@@ -12,7 +12,7 @@ if (!existsSync(cssPath) || statSync(cssPath).size < 1000) {
 }
 
 const html = await readFile(join(root, 'index.html'), 'utf8');
-for (const id of ['top', 'work', 'about', 'contact']) {
+for (const id of ['top', 'work', 'experience', 'about', 'contact']) {
   if (!html.includes(`id="${id}"`)) errors.push(`Missing single-page section: #${id}`);
 }
 
