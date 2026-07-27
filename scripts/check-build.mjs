@@ -12,8 +12,9 @@ if (!existsSync(cssPath) || statSync(cssPath).size < 1000) {
 }
 
 const html = await readFile(join(root, 'index.html'), 'utf8');
-for (const id of ['top', 'work', 'experience', 'about', 'contact']) {
-  if (!html.includes(`id="${id}"`)) errors.push(`Missing single-page section: #${id}`);
+if (!html.includes('id="top"')) errors.push('Missing homepage section: #top');
+for (const id of ['work', 'experience', 'about', 'contact']) {
+  if (html.includes(`id="${id}"`)) errors.push(`Retired section is still present: #${id}`);
 }
 
 if (/href="\/(projects|writing)|href="\/about\.html|href="\/resume\.html/.test(html)) {

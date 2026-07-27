@@ -1,6 +1,6 @@
 # caesarladion.com
 
-A deliberately simple, single-page portfolio for Caesar Ladion.
+A deliberately simple, single-section portfolio for Caesar Ladion.
 
 ## Stack
 
@@ -30,4 +30,4 @@ Open [http://localhost:3000](http://localhost:3000).
 npm run build
 ```
 
-The build compiles the stylesheet and verifies that the four on-page sections are present and no retired page links remain.
+The build compiles the stylesheet and verifies that the single homepage section is present and no retired page links remain.
