@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="base" cx="50%" cy="42%" r="84%">
+      <stop offset="0" stop-color="#170629"/>
+      <stop offset=".42" stop-color="#080313"/>
+      <stop offset="1" stop-color="#010106"/>
+    </radialGradient>
+
+    <linearGradient id="purpleFlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13001f"/>
+      <stop offset=".22" stop-color="#3d0872"/>
+      <stop offset=".46" stop-color="#7a27d8"/>
+      <stop offset=".63" stop-color="#29004c"/>
+      <stop offset=".82" stop-color="#5910a2"/>
+      <stop offset="1" stop-color="#09000f"/>
+    </linearGradient>
+
+    <linearGradient id="violetSheen" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#060009"/>
+      <stop offset=".32" stop-color="#210047"/>
+      <stop offset=".52" stop-color="#a064ff"/>
+      <stop offset=".67" stop-color="#32005e"/>
+      <stop offset="1" stop-color="#09000d"/>
+    </linearGradient>
+
+    <linearGradient id="goldVein" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f2c00"/>
+      <stop offset=".26" stop-color="#d79b24"/>
+      <stop offset=".48" stop-color="#ffe69a"/>
+      <stop offset=".65" stop-color="#a76509"/>
+      <stop offset="1" stop-color="#2b1600"/>
+    </linearGradient>
+
+    <radialGradient id="goldBloom">
+      <stop offset="0" stop-color="#ffd96c" stop-opacity=".7"/>
+      <stop offset=".36" stop-color="#9e5f10" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#160a00" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="liquid" x="-25%" y="-35%" width="150%" height="170%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".004 .013" numOctaves="3" seed="29" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="155" xChannelSelector="R" yChannelSelector="B"/>
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+
+    <filter id="silk" x="-25%" y="-35%" width="150%" height="170%" color-interpolation-filters="sRGB">
+      <feTurbulence type="turbulence" baseFrequency=".006 .022" numOctaves="2" seed="41" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="88" xChannelSelector="G" yChannelSelector="R"/>
+      <feGaussianBlur stdDeviation="1.25"/>
+    </filter>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".74" numOctaves="3" seed="8" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .16 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#base)"/>
+
+  <g opacity=".86" filter="url(#liquid)" style="mix-blend-mode:screen">
+    <path d="M-220 1020C126 830 193 448 548 383c383-70 464 185 747 25 228-129 304-372 820-294" fill="none" stroke="url(#purpleFlow)" stroke-width="245" stroke-linecap="round"/>
+    <path d="M-204 226C160 51 353 178 517 323c181 161 239 356 548 402 339 51 504-120 1019 102" fill="none" stroke="url(#violetSheen)" stroke-width="178" stroke-linecap="round"/>
+    <path d="M1560-140c-268 267-116 446-299 618-190 180-473 101-610 346-81 145-40 275-185 403" fill="none" stroke="url(#purpleFlow)" stroke-width="128" stroke-linecap="round"/>
+  </g>
+
+  <g opacity=".42" filter="url(#silk)" style="mix-blend-mode:screen">
+    <path d="M-80 862c381-187 456-459 785-437 264 17 369 235 621 158 239-73 298-277 663-273" fill="none" stroke="#a75dff" stroke-width="38" stroke-linecap="round"/>
+    <path d="M-130 108c282 118 351 341 624 384 269 43 408-97 619 24 198 120 246 348 718 393" fill="none" stroke="#4a0f82" stroke-width="68" stroke-linecap="round"/>
+  </g>
+
+  <g opacity=".88" filter="url(#silk)" style="mix-blend-mode:screen">
+    <path d="M-122 933C230 751 262 512 596 467c337-45 455 160 714 35 253-122 302-321 738-304" fill="none" stroke="url(#goldVein)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M41 42c209 159 270 335 518 376 290 47 397-137 627 2 187 113 227 316 660 439" fill="none" stroke="url(#goldVein)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1773-53c-215 195-141 381-302 509-176 139-400 61-539 263-92 133-78 253-235 395" fill="none" stroke="#efbd55" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g opacity=".35" style="mix-blend-mode:screen">
+    <ellipse cx="342" cy="799" rx="382" ry="270" fill="url(#goldBloom)" filter="url(#softGlow)"/>
+    <ellipse cx="1607" cy="244" rx="330" ry="232" fill="url(#goldBloom)" filter="url(#softGlow)"/>
+    <ellipse cx="1010" cy="764" rx="440" ry="295" fill="#421177" opacity=".28" filter="url(#softGlow)"/>
+  </g>
+
+  <rect width="1920" height="1080" filter="url(#grain)" opacity=".25" style="mix-blend-mode:soft-light"/>
+  <rect width="1920" height="1080" fill="none" stroke="#c99a3d" stroke-opacity=".14" stroke-width="2"/>
+</svg>
